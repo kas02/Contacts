@@ -30,9 +30,9 @@ public class AddContact extends Activity {
         setContentView(R.layout.add_contact_layout);
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-    }
+    } //end of onCreate()
 
-    public void onClick(View view) {
+    public void onClickAddButton(View view) {
 
         EditText editName = (EditText) findViewById(R.id.editName);
         EditText editPhone = (EditText) findViewById(R.id.editPhone);
@@ -88,7 +88,7 @@ public class AddContact extends Activity {
 
             finish();
         }
-    } //end of onClick()
+    } //end of onClickAddButton()
 
     @Override
     protected void onResume() {
@@ -124,4 +124,4 @@ public class AddContact extends Activity {
         latitude =  String.format("%1$.6f", location.getLatitude());
         longitude = String.format("%1$.6f", location.getLongitude());
      }
-}
+} //end of class AddContact

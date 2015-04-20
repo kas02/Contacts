@@ -235,4 +235,4 @@ public class MainActivity extends Activity {
         }
         c.close();
     } //end of deleteContact()
-} //end of MainActivity
+} //end of class MainActivity

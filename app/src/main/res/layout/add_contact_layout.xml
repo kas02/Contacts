@@ -38,7 +38,7 @@
         android:id="@+id/addBtn"
         android:layout_below="@+id/editPhone"
         android:layout_centerHorizontal="true"
-        android:onClick="onClick"
+        android:onClick="onClickAddButton"
         android:background="@drawable/ripple"
         android:layout_marginTop="10dp"/>
 

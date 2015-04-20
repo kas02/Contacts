@@ -60,9 +60,9 @@ public class ContactAdapter extends BaseAdapter{
         locationIcon.setTag(getItemId(position));
 
         return view;
-    }
+    } //end of getView
 
     private Contact getContact(int position) {
         return (Contact) getItem(position);
     }
- }
+ } //end of class ContactAdapter

@@ -46,4 +46,4 @@ public class Contact{
 //    public void setLocation(boolean location) {
 //        this.location = location;
 //    }
-}
+} //end of class Contact
