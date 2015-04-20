@@ -63,7 +63,6 @@ public class MainActivity extends Activity {
 
     private List<Contact> initData() {
         List<Contact> list = new ArrayList<>();
-
         int id;
         String[] data = new String[5];
         ArrayList<String[]> allData = new ArrayList<>();

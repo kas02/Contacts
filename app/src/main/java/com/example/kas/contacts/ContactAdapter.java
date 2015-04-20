@@ -65,4 +65,4 @@ public class ContactAdapter extends BaseAdapter{
     private Contact getContact(int position) {
         return (Contact) getItem(position);
     }
- } //end of class ContactAdapter
+} //end of class ContactAdapter

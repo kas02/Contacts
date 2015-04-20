@@ -12,6 +12,7 @@ import android.provider.ContactsContract.RawContacts;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.provider.ContactsContract.CommonDataKinds.StructuredName;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -23,6 +24,7 @@ public class AddContact extends Activity {
     private LocationManager locationManager;
     String latitude;
     String longitude;
+    public final static String TAG = "MyLogs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +45,6 @@ public class AddContact extends Activity {
             Toast.makeText(getApplicationContext(), R.string.fill_fields, Toast.LENGTH_SHORT).show();
         } else {
             ArrayList<ContentProviderOperation> cpo = new ArrayList<>();
-
             cpo.add(ContentProviderOperation.newInsert(RawContacts.CONTENT_URI)
                     .withValue(RawContacts.ACCOUNT_TYPE, null)
                     .withValue(RawContacts.ACCOUNT_NAME, null)
@@ -62,14 +63,7 @@ public class AddContact extends Activity {
                     .withValue(Phone.TYPE, Phone.TYPE_MOBILE)
                     .build());
 
-            if (latitude.equals("")||longitude.equals("")){
-                String isLocation = "0";
-                cpo.add(ContentProviderOperation.newInsert(Data.CONTENT_URI)
-                        .withValueBackReference(Data.RAW_CONTACT_ID, 0)
-                        .withValue(Data.MIMETYPE, LOCATION_MIME_TYPE)
-                        .withValue(Phone.NUMBER, isLocation)
-                        .build());
-            } else {
+            if ((latitude != null && !latitude.equals("")) && (longitude != null && !longitude.equals(""))) {
                 String isLocation = "1";
                 cpo.add(ContentProviderOperation.newInsert(Data.CONTENT_URI)
                         .withValueBackReference(Data.RAW_CONTACT_ID, 0)
@@ -78,25 +72,31 @@ public class AddContact extends Activity {
                         .withValue(Phone.TYPE, latitude)
                         .withValue(Phone.LABEL, longitude)
                         .build());
+            } else {
+                String isLocation = "0";
+                cpo.add(ContentProviderOperation.newInsert(Data.CONTENT_URI)
+                        .withValueBackReference(Data.RAW_CONTACT_ID, 0)
+                        .withValue(Data.MIMETYPE, LOCATION_MIME_TYPE)
+                        .withValue(Phone.NUMBER, isLocation)
+                        .build());
             }
             try {
                 getContentResolver().applyBatch(ContactsContract.AUTHORITY, cpo);
+                finish();
+                Toast.makeText(getApplicationContext(), R.string.contact_saved, Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
                 e.printStackTrace();
-                Toast.makeText(this, "Exception: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), R.string.can_not_save_contact, Toast.LENGTH_SHORT).show();
+                Log.e (TAG, "Exception: " + e.getMessage());
             }
-
-            finish();
         }
     } //end of onClickAddButton()
 
     @Override
     protected void onResume() {
         super.onResume();
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,
-                1000 * 5, 10, locationListener);
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,
-                1000 * 5, 10, locationListener);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000 * 5, 10, locationListener);
+        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 1000 * 5, 10, locationListener);
     }
 
     private LocationListener locationListener = new LocationListener() {
