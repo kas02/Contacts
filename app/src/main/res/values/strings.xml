@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Контакти</string>
+    <string name="main_name">Список контактів</string>
+    <string name="action_del_all">Видалити всі контакти</string>
+    <string name="title_activity_add_contact">Додайте контакт</string>
+    <string name="name">Ім\'я</string>
+    <string name="phone">Телефон</string>
+    <string name="add_btn">Зберегти</string>
+    <string name="fill_fields">Заповніть поля</string>
+    <string name="no_contacts">У Вас немає контактів</string>
+    <string name="show_location">Подивитись на карті</string>
+    <string name="no_location">Відсутні координати</string>
+    <string name="title_activity_uses_contacts">UsesContacts</string>
+    <string name="warning">Увага!</string>
+    <string name="delete_question">Видалити контакт?</string>
+    <string name="delete">ВИДАЛИТИ</string>
+    <string name="cancel">Hi</string>
+
+</resources>

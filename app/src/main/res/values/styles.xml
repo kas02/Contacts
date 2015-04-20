@@ -1,0 +1,10 @@
+<resources>
+
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <item name="android:colorPrimaryDark">@color/GREEN_700</item>
+        <item name="android:colorPrimary">@color/GREEN_500</item>
+        <item name="android:navigationBarColor">@color/GREEN_700</item>
+        <item name="android:windowBackground">@color/GREEN_50</item>
+    </style>
+
+</resources>
