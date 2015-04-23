@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Contacts</string>
+    <string name="main_name">Contact list</string>
+    <string name="action_del_all">Delete all contacts</string>
+    <string name="title_activity_add_contact">Add contact</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="add_btn">Save</string>
+    <string name="fill_fields">Fill in the fields</string>
+    <string name="no_contacts">You haven\'t contacts</string>
+    <string name="show_location">Show on the map</string>
+    <string name="no_location">There are no coordinates</string>
+    <string name="warning">Warning!</string>
+    <string name="delete_question">Do you want delete the contact?</string>
+    <string name="delete">DELETE</string>
+    <string name="cancel">No</string>
+    <string name="contact_saved">Contact saved</string>
+    <string name="can_not_save_contact">Unable to save contact</string>
+    <string name="wait">Wait</string>
+    <string name="get_coordinates">Getting location…</string>
+
+</resources>
