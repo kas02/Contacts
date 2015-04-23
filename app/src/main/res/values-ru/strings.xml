@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Контакты</string>
+    <string name="action_del_all">Удалить все контакты</string>
+    <string name="add_btn">Сохранить</string>
+    <string name="can_not_save_contact">Не удалось сберечь контакт</string>
+    <string name="cancel">Нет</string>
+    <string name="contact_saved">Контакт соранено</string>
+    <string name="delete">УДАЛИТЬ</string>
+    <string name="delete_question">Удалить контакт?</string>
+    <string name="fill_fields">Заполните поля</string>
+    <string name="get_coordinates">Получаем координаты…</string>
+    <string name="main_name">Список контактов</string>
+    <string name="name">Имя</string>
+    <string name="no_contacts">У Вас нет контактов</string>
+    <string name="no_location">Отсутствуют координаты</string>
+    <string name="phone">Телефон</string>
+    <string name="show_location">Посмотреть на карте</string>
+    <string name="title_activity_add_contact">Добавьте контакт</string>
+    <string name="wait">Подождите</string>
+    <string name="warning">Внимание!</string>
+</resources>
