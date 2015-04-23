@@ -1,23 +1,22 @@
 <resources>
-    <string name="app_name">Контакти</string>
-    <string name="main_name">Список контактів</string>
-    <string name="action_del_all">Видалити всі контакти</string>
-    <string name="title_activity_add_contact">Додайте контакт</string>
-    <string name="name">Ім\'я</string>
-    <string name="phone">Телефон</string>
-    <string name="add_btn">Зберегти</string>
-    <string name="fill_fields">Заповніть поля</string>
-    <string name="no_contacts">У Вас немає контактів</string>
-    <string name="show_location">Подивитись на карті</string>
-    <string name="no_location">Відсутні координати</string>
-    <string name="title_activity_uses_contacts">UsesContacts</string>
-    <string name="warning">Увага!</string>
-    <string name="delete_question">Видалити контакт?</string>
-    <string name="delete">ВИДАЛИТИ</string>
-    <string name="cancel">Hi</string>
-    <string name="contact_saved">Контакт збережено</string>
-    <string name="can_not_save_contact">Не вдалося зберегти контакт</string>
-    <string name="wait">Зачекайте</string>
-    <string name="get_coordinates">Отримуємо координати...</string>
+    <string name="app_name">Contacts</string>
+    <string name="main_name">Contact list</string>
+    <string name="action_del_all">Delete all contacts</string>
+    <string name="title_activity_add_contact">Add contact</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="add_btn">Save</string>
+    <string name="fill_fields">Fill in the fields</string>
+    <string name="no_contacts">You haven\'t contacts</string>
+    <string name="show_location">Show on the map</string>
+    <string name="no_location">There are no coordinates</string>
+    <string name="warning">Warning!</string>
+    <string name="delete_question">Do you want delete the contact?</string>
+    <string name="delete">DELETE</string>
+    <string name="cancel">No</string>
+    <string name="contact_saved">Contact saved</string>
+    <string name="can_not_save_contact">Unable to save contact</string>
+    <string name="wait">Wait</string>
+    <string name="get_coordinates">Getting location…</string>
 
 </resources>
