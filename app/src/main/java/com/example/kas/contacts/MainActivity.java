@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
     private static final String MIME_PHONE = "vnd.android.cursor.item/phone_v2";
     private static final String MIME_EMAIL = "vnd.android.cursor.item/email_v2";
     private static final String MIME_LOCATION = "vnd.android.cursor.item/com.example.kas.contacts.location";
-
+    private static ArrayList<String[]> allData = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,7 +65,7 @@ public class MainActivity extends Activity {
         List<Contact> list = new ArrayList<>();
         int id;
         String[] data = new String[5];
-        ArrayList<String[]> allData = new ArrayList<>();
+
 
         Uri uri = Data.CONTENT_URI;
 
@@ -123,8 +123,6 @@ public class MainActivity extends Activity {
                     (allData.get(i)[1] == null ? allData.get(i)[3] : allData.get(i)[1]),
                     (allData.get(i)[2] == null ? "" : allData.get(i)[2]),
                     (allData.get(i)[4] != null)));
-
-
         }
         return list;
     } // end of initData()
@@ -157,11 +155,10 @@ public class MainActivity extends Activity {
         try{
             c.moveToFirst();
             if (c.getInt(c.getColumnIndex(Data.DATA1)) == 1) {
-                lat = c.getString(c.getColumnIndex(Data.DATA2));
-                lon = c.getString(c.getColumnIndex(Data.DATA3));
+                lat = c.getString(c.getColumnIndex(Data.DATA2)).replace(',', '.');
+                lon = c.getString(c.getColumnIndex(Data.DATA3)).replace(',', '.');
 
-                String geoURI = String.format("geo:%s,%s?z=15", lat, lon);
-                //String geoURI = "geo:" + lat + "," + lon + "?z=15";
+                String geoURI = String.format("geo:0,0?q=%s,%s", lat, lon);
                 Uri geo = Uri.parse(geoURI);
                 Intent geoMap = new Intent(Intent.ACTION_VIEW, geo);
                 startActivity(geoMap);
