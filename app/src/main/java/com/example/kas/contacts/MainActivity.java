@@ -160,7 +160,8 @@ public class MainActivity extends Activity {
                 lat = c.getString(c.getColumnIndex(Data.DATA2));
                 lon = c.getString(c.getColumnIndex(Data.DATA3));
 
-                String geoURI = "geo:" + lat + "," + lon + "?q=" + lat + "," + lon + "?z=15";
+                String geoURI = String.format("geo:%s,%s?z=15", lat, lon);
+                //String geoURI = "geo:" + lat + "," + lon + "?z=15";
                 Uri geo = Uri.parse(geoURI);
                 Intent geoMap = new Intent(Intent.ACTION_VIEW, geo);
                 startActivity(geoMap);
