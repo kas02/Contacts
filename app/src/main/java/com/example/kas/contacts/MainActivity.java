@@ -31,6 +31,7 @@ public class MainActivity extends Activity {
     private static final String MIME_EMAIL = "vnd.android.cursor.item/email_v2";
     private static final String MIME_LOCATION = "vnd.android.cursor.item/com.example.kas.contacts.location";
     private static ArrayList<String[]> allData = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
