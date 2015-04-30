@@ -82,8 +82,8 @@ public class AddContact extends Activity {
             }
             try {
                 getContentResolver().applyBatch(ContactsContract.AUTHORITY, cpo);
-                finish();
                 Toast.makeText(getApplicationContext(), R.string.contact_saved, Toast.LENGTH_SHORT).show();
+                finish();
             } catch (Exception e) {
                 e.printStackTrace();
                 Toast.makeText(getApplicationContext(), R.string.can_not_save_contact, Toast.LENGTH_SHORT).show();

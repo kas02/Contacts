@@ -3,7 +3,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="@color/GREEN_50">
+    android:background="@color/GREEN_50"
+    android:paddingRight="10dp">
 
 
     <LinearLayout
@@ -46,7 +47,8 @@
             android:src="@drawable/ic_no_location"
             android:layout_weight="0.8"
             android:layout_gravity="center_vertical"
-            android:onClick="openMap"/>
+            android:onClick="openMap"
+            android:paddingRight="10dp" />
 
     </LinearLayout>
 

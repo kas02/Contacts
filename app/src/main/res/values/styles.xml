@@ -5,6 +5,8 @@
         <item name="android:colorPrimary">@color/GREEN_500</item>
         <item name="android:navigationBarColor">@color/GREEN_700</item>
         <item name="android:windowBackground">@color/GREEN_50</item>
+        <item name="android:textColorTertiary">@color/GREY</item>
+        <item name="android:textColorPrimary">@color/WHITE</item>
     </style>
 
 </resources>
