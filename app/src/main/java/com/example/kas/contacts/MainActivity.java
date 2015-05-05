@@ -30,7 +30,6 @@ public class MainActivity extends Activity {
     private static final String MIME_PHONE = "vnd.android.cursor.item/phone_v2";
     private static final String MIME_EMAIL = "vnd.android.cursor.item/email_v2";
     private static final String MIME_LOCATION = "vnd.android.cursor.item/com.example.kas.contacts.location";
-    private static ArrayList<String[]> allData = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +43,7 @@ public class MainActivity extends Activity {
        showList();
     }
 
-    private void showList(){
+    protected void showList(){
         ListView contactsList = (ListView) findViewById(R.id.contactsView);
         ContactAdapter adapter = new ContactAdapter(this, initData());
         contactsList.setAdapter(adapter);
@@ -64,6 +63,7 @@ public class MainActivity extends Activity {
 
     private List<Contact> initData() {
         List<Contact> list = new ArrayList<>();
+        ArrayList<String[]> allData = new ArrayList<>();
         int id;
         String[] data = new String[5];
 
@@ -123,7 +123,7 @@ public class MainActivity extends Activity {
                     Integer.parseInt(allData.get(i)[0]),
                     (allData.get(i)[1] == null ? allData.get(i)[3] : allData.get(i)[1]),
                     (allData.get(i)[2] == null ? "" : allData.get(i)[2]),
-                    (allData.get(i)[4] != null)));
+                    (allData.get(i)[4] != null && !allData.get(i)[4].equals("0"))));
         }
         return list;
     } // end of initData()
@@ -151,11 +151,13 @@ public class MainActivity extends Activity {
 
         String selection = Data.CONTACT_ID + "=?" + " AND " + Data.MIMETYPE + "='" + MIME_LOCATION + "'";
         String[] selectionArg = {idStr};
+
         Cursor c = getContentResolver().query(Data.CONTENT_URI, rejection, selection, selectionArg, null, null);
 
         try{
             c.moveToFirst();
-            if (c.getInt(c.getColumnIndex(Data.DATA1)) == 1) {
+            Log.e(TAG, c.getString(c.getColumnIndex(Data.DATA1)));
+            if (c.getInt(c.getColumnIndex(Data.DATA1)) > 0) {
                 lat = c.getString(c.getColumnIndex(Data.DATA2)).replace(',', '.');
                 lon = c.getString(c.getColumnIndex(Data.DATA3)).replace(',', '.');
 
@@ -165,9 +167,11 @@ public class MainActivity extends Activity {
                 startActivity(geoMap);
             } else {
                 Toast.makeText(getApplicationContext(), R.string.no_location, Toast.LENGTH_SHORT).show();
+                //Log.e(TAG, "No1");
             }
         } catch (IndexOutOfBoundsException e){
                 Toast.makeText(getApplicationContext(), R.string.no_location, Toast.LENGTH_SHORT).show();
+                //Log.e(TAG, "No2");
         }
 
         c.close();
