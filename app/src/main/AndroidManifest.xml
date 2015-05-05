@@ -8,24 +8,23 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@style/AppTheme">
+
         <activity
             android:name=".MainActivity"
             android:label="@string/main_name"
-            android:icon="@drawable/ic_action_name"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <activity
             android:name=".AddContact"
             android:label="@string/title_activity_add_contact"
-            android:icon="@drawable/ic_action_name"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" >
             <meta-data
